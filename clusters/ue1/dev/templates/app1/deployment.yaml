@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: app1-deployment
-  namespace: ue1
+  namespace: app1
 spec:
   selector:
     matchLabels:
