@@ -1,8 +1,8 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: app1-ingress-ue1
-  namespace: app1-ue1
+  name: app1-ingress-uw1
+  namespace: app1
   annotations:
     alb.ingress.kubernetes.io/group.name: riker
     alb.ingress.kubernetes.io/scheme: internet-facing
@@ -10,17 +10,17 @@ metadata:
     alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}]'
     #alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}, {"HTTPS":443}]'
     #alb.ingress.kubernetes.io/actions.ssl-redirect: '{"Type": "redirect", "RedirectConfig": { "Protocol": "HTTPS", "Port": "443", "StatusCode": "HTTP_301"}}'
-    alb.ingress.kubernetes.io/tags: Environment=dev,Cluster=ue1
+    alb.ingress.kubernetes.io/tags: Environment=dev,Cluster=uw1
 spec:
   ingressClassName: alb
   rules:
     - host: #skiapp.{{ .Values.spec.ingress.host }}
       http:
         paths:
-          - path: /ue1
+          - path: /uw1
             pathType: Prefix
             backend:
               service:
-                name: app1-service-ue1
+                name: app1-service-uw1
                 port:
                   number: 80

@@ -1,20 +1,20 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Rollout
 metadata:
-  name: app1-ue1-rollout
-  namespace: app1-ue1
+  name: app1-uw1-rollout
+  namespace: app1
   labels:
-    app: app1-ue1
+    app: app1-uw1
 spec:
   replicas: 3
   revisionHistoryLimit: 1
   selector:
     matchLabels:
-      app: app1-ue1
+      app: app1-uw1
   template:
     metadata:
       labels:
-        app: app1-ue1
+        app: app1-uw1
     spec:
       containers:
       - name: app1
@@ -34,15 +34,15 @@ spec:
   strategy:
     blueGreen:
       autoPromotionEnabled: false
-      activeService: app1-service-ue1
-      previewService: app1-service-ue1-preview
+      activeService: app1-service-uw1
+      previewService: app1-service-uw1-preview
 ---
 
 apiVersion: v1
 kind: Service
 metadata:
-  name: app1-service-ue1-preview
-  namespace: app1-ue1
+  name: app1-service-uw1-preview
+  namespace: app1
 spec:
   ports:
     - port: 80
@@ -50,16 +50,16 @@ spec:
       protocol: TCP
   type: NodePort
   selector:
-    app: app1-ue1
+    app: app1-uw1
 
 ---
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: skiapp-ingress-preview
-  namespace: app1-ue1
+  namespace: app1
   annotations:
-    alb.ingress.kubernetes.io/group.name: ue1-preview
+    alb.ingress.kubernetes.io/group.name: uw1-preview
     alb.ingress.kubernetes.io/scheme: internet-facing
     alb.ingress.kubernetes.io/target-type: ip
     alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}]'
@@ -75,6 +75,6 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: app1-service-ue1-preview
+            name: app1-service-uw1-preview
             port:
               number: 80

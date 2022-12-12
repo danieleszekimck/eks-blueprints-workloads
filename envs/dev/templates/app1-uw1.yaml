@@ -10,7 +10,7 @@ metadata:
 spec:
   project: default
   destination:
-    namespace: app1
+    namespace: app1-uw1
     server: {{ .Values.spec.destination.server }}
   source:
     repoURL: {{ .Values.spec.source.repoURL }}

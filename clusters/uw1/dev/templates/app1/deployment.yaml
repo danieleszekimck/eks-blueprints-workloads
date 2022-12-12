@@ -1,20 +1,20 @@
 # apiVersion: apps/v1
 # kind: Deployment
 # metadata:
-#   name: skiapp-deployment
-#   namespace: team-riker
+#   name: app1-deployment
+#   namespace: app1
 # spec:
 #   selector:
 #     matchLabels:
-#       app: skiapp
+#       app: app1-uw1
 #   replicas: 2 
 #   template: 
 #     metadata:
 #       labels:
-#         app: skiapp
+#         app: app1-uw1
 #     spec:
 #       containers:
-#       - name: skiapp
+#       - name: app1
 #         image: sharepointoscar/skiapp:v2
 #         ports:
 #         - containerPort: 8080
