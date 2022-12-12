@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: app1-deployment-ue1
-  namespace: team-riker
+  namespace: ue1
 spec:
   selector:
     matchLabels:

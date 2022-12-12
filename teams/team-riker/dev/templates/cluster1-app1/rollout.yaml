@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Rollout
 metadata:
   name: app1-ue1-rollout
-  namespace: team-riker
+  namespace: ue1
   labels:
     app: app1-ue1
 spec:
