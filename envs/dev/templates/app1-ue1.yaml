@@ -8,7 +8,7 @@ metadata:
   finalizers:
   - resources-finalizer.argocd.argoproj.io
 spec:
-  project: project-ue1-dev
+  project: default
   destination:
     namespace: app1-ue1-dev
     server: {{ .Values.spec.destination.server }}
