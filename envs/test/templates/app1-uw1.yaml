@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: app1-uw1
+  name: app1-uw1-test
   namespace: argocd
   labels:
     {{- toYaml .Values.labels | nindent 4 }}  
