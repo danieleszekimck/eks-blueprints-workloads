@@ -2,7 +2,7 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: app1-ingress-ue1
-  namespace: app1-ue1
+  namespace: app1-ue1-dev
   annotations:
     alb.ingress.kubernetes.io/group.name: riker
     alb.ingress.kubernetes.io/scheme: internet-facing

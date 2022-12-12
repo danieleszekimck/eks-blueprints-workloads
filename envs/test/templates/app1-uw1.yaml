@@ -1,21 +1,21 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: team-riker
+  name: app1-uw1
   namespace: argocd
   labels:
     {{- toYaml .Values.labels | nindent 4 }}  
   finalizers:
   - resources-finalizer.argocd.argoproj.io
 spec:
-  project: default
+  project: project-uw1-test
   destination:
-    namespace: team-riker
+    namespace: app1-uw1-test
     server: {{ .Values.spec.destination.server }}
   source:
     repoURL: {{ .Values.spec.source.repoURL }}
     targetRevision: {{ .Values.spec.source.targetRevision }}
-    path: teams/team-riker/prod
+    path: clusters/uw1/test
     helm:
       values: |
         {{- toYaml .Values | nindent 8 }}
