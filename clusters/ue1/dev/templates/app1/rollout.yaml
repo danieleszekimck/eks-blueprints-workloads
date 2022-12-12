@@ -42,7 +42,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: app1-service-ue1-preview
-  namespace: ue1
+  namespace: app1
 spec:
   ports:
     - port: 80
