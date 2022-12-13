@@ -1,8 +1,8 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: app1-service-uw1-test
-  namespace: app1-uw1-test
+  name: app1-service-ue1-test
+  namespace: app1-ue1-test
 spec:
   ports:
     - port: 80
@@ -10,4 +10,4 @@ spec:
       protocol: TCP
   type: NodePort
   selector:
-    app: app1-uw1
+    app: app1-ue1-test

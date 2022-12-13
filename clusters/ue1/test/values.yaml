@@ -1,6 +1,6 @@
 labels:
   env: test
-  cluster: uw1
+  cluster: ue1
 spec:
   env:
   ingress:

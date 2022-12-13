@@ -34,14 +34,14 @@ spec:
   strategy:
     blueGreen:
       autoPromotionEnabled: false
-      activeService: app1-service-uw1
-      previewService: app1-service-uw1-preview
+      activeService: app1-service-uw1-test
+      previewService: app1-service-uw1-test-preview
 ---
 
 apiVersion: v1
 kind: Service
 metadata:
-  name: app1-service-uw1-preview
+  name: app1-service-uw1-test-preview
   namespace: app1-uw1-test
 spec:
   ports:
@@ -75,6 +75,6 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: app1-service-uw1-preview
+            name: app1-service-uw1-test-preview
             port:
               number: 80

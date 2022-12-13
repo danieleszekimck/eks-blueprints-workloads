@@ -1,8 +1,8 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: app1-ingress-uw1-test
-  namespace: app1-uw1-test
+  name: app1-ingress-ue1-test
+  namespace: app1-ue1-test
   annotations:
     alb.ingress.kubernetes.io/group.name: riker
     alb.ingress.kubernetes.io/scheme: internet-facing
@@ -17,10 +17,10 @@ spec:
     - host: #skiapp.{{ .Values.spec.ingress.host }}
       http:
         paths:
-          - path: /uw1
+          - path: /ue1
             pathType: Prefix
             backend:
               service:
-                name: app1-service-uw1
+                name: app1-service-ue1
                 port:
                   number: 80
