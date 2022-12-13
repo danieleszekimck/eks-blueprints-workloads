@@ -1,23 +1,23 @@
-apiVersion: networking.k8s.io/v1
-kind: Ingress
-metadata:
-  name: app1-ingress-ue1
-  namespace: app1-ue1-dev
-  annotations:
-    alb.ingress.kubernetes.io/group.name: riker
-    alb.ingress.kubernetes.io/scheme: internet-facing
-    alb.ingress.kubernetes.io/target-type: ip
-    alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}]'
-spec:
-  ingressClassName: alb
-  rules:
-    - host: #skiapp.{{ .Values.spec.ingress.host }}
-      http:
-        paths:
-          - path: /ue1
-            pathType: Prefix
-            backend:
-              service:
-                name: app1-service-ue1
-                port:
-                  number: 80
+# apiVersion: networking.k8s.io/v1
+# kind: Ingress
+# metadata:
+#   name: app1-ingress-ue1
+#   namespace: app1-ue1-dev
+#   annotations:
+#     alb.ingress.kubernetes.io/group.name: riker
+#     alb.ingress.kubernetes.io/scheme: internet-facing
+#     alb.ingress.kubernetes.io/target-type: ip
+#     alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}]'
+# spec:
+#   ingressClassName: alb
+#   rules:
+#     - host: #skiapp.{{ .Values.spec.ingress.host }}
+#       http:
+#         paths:
+#           - path: /ue1
+#             pathType: Prefix
+#             backend:
+#               service:
+#                 name: app1-service-ue1
+#                 port:
+#                   number: 80
