@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Rollout
 metadata:
-  name: app1-uw1-rollout
+  name: app1-rollout-uw1-test
   namespace: namespace: namespace: app1-uw1-test
   labels:
     app: app1-uw1
