@@ -4,7 +4,7 @@ metadata:
   name: app1-ingress-ue1
   namespace: app1-ue1-dev
   annotations:
-    alb.ingress.kubernetes.io/group.name: riker
+    alb.ingress.kubernetes.io/group.name: ue1-dev
     alb.ingress.kubernetes.io/scheme: internet-facing
     alb.ingress.kubernetes.io/target-type: ip
     alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}]'
