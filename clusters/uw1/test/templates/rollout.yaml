@@ -56,10 +56,10 @@ spec:
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: skiapp-ingress-preview
+  name: app1-ingress-uw1-test-preview
   namespace: app1-uw1-test
   annotations:
-    alb.ingress.kubernetes.io/group.name: uw1-preview
+    alb.ingress.kubernetes.io/group.name: uw1-test-preview
     alb.ingress.kubernetes.io/scheme: internet-facing
     alb.ingress.kubernetes.io/target-type: ip
     alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}]'
@@ -67,7 +67,7 @@ metadata:
 spec:
   ingressClassName: alb
   rules:
-  - host: #skiapprev.{{ .Values.spec.ingress.host }}
+  - host:
     http:
       paths:
       - path: /

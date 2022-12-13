@@ -59,7 +59,7 @@ metadata:
   name: app1-ingress-ue1-preview
   namespace: app1-ue1-dev
   annotations:
-    alb.ingress.kubernetes.io/group.name: ue1-preview
+    alb.ingress.kubernetes.io/group.name: ue1-dev-preview
     alb.ingress.kubernetes.io/scheme: internet-facing
     alb.ingress.kubernetes.io/target-type: ip
     alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}]'
@@ -67,7 +67,7 @@ metadata:
 spec:
   ingressClassName: alb
   rules:
-  - host: #skiapprev.{{ .Values.spec.ingress.host }}
+  - host:
     http:
       paths:
       - path: /
