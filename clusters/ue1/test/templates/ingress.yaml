@@ -14,10 +14,10 @@ spec:
     - host: #skiapp.{{ .Values.spec.ingress.host }}
       http:
         paths:
-          - path: /ue1
+          - path: /
             pathType: Prefix
             backend:
               service:
-                name: app1-service-ue1
+                name: app1-service-ue1-test
                 port:
                   number: 80
